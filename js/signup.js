@@ -9,8 +9,8 @@ async function signup() {
       body: JSON.stringify({
         name: teamName,
         password: "abc",
-          color: "#0000FF",
-          connected: 0,
+        color: "#0000FF",
+        connected: 0,
       }),
     });
   
