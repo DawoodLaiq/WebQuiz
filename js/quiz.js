@@ -21,6 +21,7 @@ function fetchQuestions() {
 function displayQuestion() {
   // If all questions are answered, show the result
   if (currentQuestionIndex >= questions.length) {
+    localStorage.removeItem("currentTeam");
     showResult();
     return;
   }
@@ -54,7 +55,8 @@ function displayQuestion() {
 
 // Check the submitted answer and update the score
 async function submitAnswer() {
-  const teamName = document.getElementById('team_name').value;
+  //const teamName = document.getElementById('team_name').value;
+  const teamName = localStorage.getItem("currentTeam");
   const id = (currentQuestionIndex+1).toString(10);
   let answer;
 
