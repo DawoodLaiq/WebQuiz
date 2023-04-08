@@ -70,3 +70,19 @@ button:hover {
 button.signup:hover {
   background-color: #2f2f2f;
 }
+
+.error-message {
+  background-color: #f44336;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  width: 80%;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

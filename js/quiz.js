@@ -106,38 +106,6 @@ function updateScoreDisplay() {
 }
 
 // Login function to authenticate the user
-async function login() {
-  const teamName = document.getElementById('team_name').value;
-  const password = document.getElementById('password').value;
-
-  const response = await fetch('https://vccfinal.online/login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ name: teamName, password: password }),
-  });
-
-  const data = await response.json();
-  console.log(data);
-
-  // Check if the login is successful
-  if (data.message && data.message.includes('Login successful')) {
-    // Hide the login container and show the quiz container
-    document.getElementById('login-container').classList.add('hidden');
-    document.getElementById('quiz-container').classList.remove('hidden');
-    localStorage.setItem("currentTeam", teamName);
-    fetchQuestions();
-
-    // Show the navbar and update the team name display
-    document.querySelector('.navbar').classList.remove('hidden');
-    document.getElementById('team-name-display').textContent = `Team: ${teamName}`;
-  } else {
-    // Show an error message if the login failed
-    document.getElementById('login-error').innerText = 'Invalid team name or password';
-    document.getElementById('login-error').classList.remove('hidden');
-  }
-}
 
 
 
