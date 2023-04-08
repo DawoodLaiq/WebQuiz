@@ -1,5 +1,5 @@
 async function signup() {
-    const teamName = document.getElementById("signup_team_name").value;
+    const teamName = document.getElementById("team-name").value;
   
     const response = await fetch("https://vccfinal.online/signup", {
       method: "POST",
@@ -19,6 +19,7 @@ async function signup() {
   
     const signupError = document.getElementById("signup-error");
     if (data.message === "Team created successfully") {
+        window.location.replace('index.html');
       signupError.classList.add("hidden");
       toggleSignup();
     } else {
