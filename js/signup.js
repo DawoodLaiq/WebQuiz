@@ -9,7 +9,6 @@ async function signup() {
       body: JSON.stringify({
         name: teamName,
         password: "abc",
-        solved_questions: 0,
           color: "#0000FF",
           connected: 0,
       }),
@@ -19,9 +18,8 @@ async function signup() {
   
     const signupError = document.getElementById("signup-error");
     if (data.message === "Team created successfully") {
+        signupError.classList.add("hidden");
         window.location.replace('index.html');
-      signupError.classList.add("hidden");
-      toggleSignup();
     } else {
       signupError.textContent = data.message;
       signupError.classList.remove("hidden");
